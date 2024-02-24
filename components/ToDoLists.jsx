@@ -26,19 +26,15 @@ export default async function ToDoLists() {
     return (
         <>
             {lists.map(list => (
-                <div className="flex justify-between border border-slate-950 px-5 py-3 items-start my-5 gap-5">
+                <div key={list._id} className="flex justify-between border border-slate-950 px-5 py-3 items-start my-5 gap-5">
                     <div>
                         <h2 className="font-bold text-xl">{list.title}</h2>
                         <span>{list.description}</span>
                     </div>
 
                     <div className="flex gap-2">
-                        <RemoveBtn
-                         key={list._id}
-                         id={list._id} />
-                        <Link
-                        key={list._id}
-                        href={`/editList/${list._id}`}>
+                        <RemoveBtn id={list._id} />
+                        <Link href={`/editList/${list._id}`}>
                             <HiPencilAlt size={20} />
                         </Link>
                     </div>
