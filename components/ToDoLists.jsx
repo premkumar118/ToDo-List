@@ -34,7 +34,9 @@ export default async function ToDoLists() {
 
                     <div className="flex gap-2">
                         <RemoveBtn id={list._id} />
-                        <Link href={`/editList/${list._id}`}>
+                        <Link
+                        key={list.id}
+                        href={`/editList/${list._id}`}>
                             <HiPencilAlt size={20} />
                         </Link>
                     </div>
